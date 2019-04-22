@@ -35,9 +35,9 @@
 		<url>https://github.com/glelouet/common-maven</url>
 		<connection>scm:git:git@github.com:glelouet/common-maven</connection>
 		<developerConnection>scm:git:git@github.com:glelouet/common-maven</developerConnection>
-		<tag>common-maven-0.0.3</tag>
+		<tag>HEAD</tag>
 	</scm>
-	<version>0.0.3</version>
+	<version>0.0.4-SNAPSHOT</version>
 
 	<repositories>
 		<repository>
