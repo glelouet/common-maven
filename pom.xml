@@ -45,14 +45,14 @@
 
 	<repositories>
 		<repository>
-			<id>github-glelouet</id>
+			<id>github-glelouet-common</id>
 			<name>GitHub glelouet/common-maven Apache Maven Packages</name>
 			<url>https://maven.pkg.github.com/glelouet/common-maven</url>
 		</repository>
 	</repositories>
 	<distributionManagement>
 		<repository>
-			<id>github-glelouet</id>
+			<id>github-glelouet-common</id>
 			<name>GitHub OWNER Apache Maven Packages</name>
 			<url>https://maven.pkg.github.com/glelouet/common-maven</url>
 		</repository>
@@ -63,7 +63,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.javadoc.skip>true</maven.javadoc.skip>
 		<openjfx-version>12.0.2</openjfx-version>
-		<revision>0.0.6</revision>
+		<revision>0.0.8</revision>
 	</properties>
 	<build>
 		<plugins>
