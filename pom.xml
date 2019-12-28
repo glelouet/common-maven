@@ -41,7 +41,7 @@
 		<developerConnection>scm:git:git@github.com:glelouet/common-maven</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
-	<version>0.0.8</version>
+	<version>0.0.9</version>
 
 	<repositories>
 		<repository>
@@ -128,10 +128,14 @@
 					<artifactId>maven-release-plugin</artifactId>
 					<version>2.5.3</version>
 				</plugin>
+				<plugin>
+					<artifactId>versions-maven-plugin</artifactId>
+					<version>2.5</version>
+				</plugin>
 			</plugins>
 		</pluginManagement>
-
 	</build>
+	
 	<description>to use :
  - select parent as fr.lelouet.common-maven 
  - add the repository http://91.121.120.36/maven/stable
