@@ -8,7 +8,7 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>2.0.0-alpha1</version>
+			<version>${slf4j-version}</version>
 		</dependency>
 	</dependencies>
 	<prerequisites>
@@ -19,7 +19,7 @@
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-simple</artifactId>
-				<version>2.0.0-alpha1</version>
+				<version>${slf4j-version}</version>
 			</dependency>
 			<dependency>
 				<groupId>ch.qos.logback</groupId>
@@ -84,6 +84,7 @@
 		<java.version>12</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.javadoc.skip>true</maven.javadoc.skip>
+		<slf4j-version>2.0.0-alpha1</slf4j-version>
 	</properties>
 	<build>
 		<plugins>
