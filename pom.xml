@@ -41,7 +41,7 @@
 		<developerConnection>scm:git:git@github.com:glelouet/common-maven</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
-	<version>0.0.10</version>
+	<version>0.0.11</version>
 
 	<repositories>
 		<repository>
@@ -81,10 +81,13 @@
 	</distributionManagement>
 
 	<properties>
-		<java.version>12</java.version>
+		<java.version>11</java.version>
+		<!-- this is used by the java compiler plugin -->
+   	 	<maven.compiler.source>${java.version}</maven.compiler.source>
+    	<maven.compiler.target>${java.version}</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.javadoc.skip>true</maven.javadoc.skip>
-		<slf4j-version>2.0.0-alpha1</slf4j-version>
+		<slf4j-version>1.7.30</slf4j-version>
 	</properties>
 	<build>
 		<plugins>
@@ -105,6 +108,13 @@
 				<version>3.8.1</version>
 				<configuration>
 					<release>${java.version}</release>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
 				</configuration>
 			</plugin>
 		</plugins>
