@@ -46,7 +46,7 @@
 		<developerConnection>scm:git:git@github.com:glelouet/common-maven</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
-	<version>0.0.12</version>
+	<version>0.0.13</version>
 
 	<repositories>
 		<repository>
