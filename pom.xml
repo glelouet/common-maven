@@ -8,13 +8,13 @@
 	<packaging>pom</packaging>
 	<name>Common-Maven</name>
 	<description>to use :
+ - add the repository in your project's pom as is done in that pom (see pom.xml/project/repositories )
  - select parent as fr.lelouet.common-maven 
  	</description>
 	<repositories>
 		<repository>
 			<id>github-glelouet-commonmaven</id>
-			<name>GitHub glelouet/common-maven Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/glelouet/common-maven</url>
+			<url>https://glelouet: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@maven.pkg.github.com/glelouet/common-maven</url>
 		</repository>
 	</repositories>
 	<distributionManagement>
