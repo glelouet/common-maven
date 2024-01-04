@@ -9,9 +9,7 @@
 	<name>Common-Maven</name>
 	<description>to use :
  - select parent as fr.lelouet.common-maven 
- - add the repository http://91.121.120.36/maven/stable
- 	</description>
-	
+ 	</description>	
 	
 	<scm>
 		<url>https://github.com/glelouet/common-maven</url>
@@ -21,35 +19,11 @@
 	</scm>
 	<repositories>
 		<repository>
-			<id>kimsufi-stable</id>
-			<url>http://91.121.120.36/maven/stable</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>kimsufi-snapshots</id>
-			<url>http://91.121.120.36/maven/snapshot/</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
 			<id>github-glelouet</id>
 			<name>GitHub glelouet/common-maven Apache Maven Packages</name>
 			<url>https://maven.pkg.github.com/glelouet/common-maven</url>
 		</repository>
 	</repositories>
-	<distributionManagement>
-		<repository>
-			<id>kimsufi-repository</id>
-			<url>ftp://91.121.120.36:12345/stable</url>
-		</repository>
-		<snapshotRepository>
-			<id>kimsufi-snapshots</id>
-			<url>ftp://91.121.120.36:12345/snapshot</url>
-		</snapshotRepository>
-	</distributionManagement>
 
 
 	<prerequisites>
@@ -281,6 +255,11 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>3.1.2</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>3.4.0</version>
 				</plugin>
 <!--				end apache plugins-->
 				
