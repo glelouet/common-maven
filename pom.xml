@@ -9,23 +9,21 @@
 	<name>Common-Maven</name>
 	<description>to use :
  - select parent as fr.lelouet.common-maven 
- 	</description>	
-	
-	<scm>
-		<url>https://github.com/glelouet/common-maven</url>
-		<connection>scm:git:git@github.com:glelouet/common-maven</connection>
-		<developerConnection>scm:git:git@github.com:glelouet/common-maven</developerConnection>
-		<tag>HEAD</tag>
-	</scm>
+ 	</description>
 	<repositories>
 		<repository>
-			<id>github-glelouet</id>
+			<id>github-glelouet-commonmaven</id>
 			<name>GitHub glelouet/common-maven Apache Maven Packages</name>
 			<url>https://maven.pkg.github.com/glelouet/common-maven</url>
 		</repository>
 	</repositories>
-
-
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>Releases</name>
+			<url>https://maven.pkg.github.com/glelouet/common-maven</url>
+		</repository>
+	</distributionManagement>
 	<prerequisites>
 		<maven>4.0</maven>
 	</prerequisites>
@@ -34,29 +32,24 @@
 		<!-- this is used by the java compiler plugin -->
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
-		
 		<!-- basic maven project configuration -->
 		<maven.javadoc.skip>true</maven.javadoc.skip>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		
-		<!-- dependencies --> 
+		<!-- dependencies -->
 		<choco.version>4.10.12</choco.version>
 		<jackson.version>2.15.2</jackson.version>
 		<openjfx.version>21</openjfx.version>
 		<slf4j.version>2.0.7</slf4j.version>
 	</properties>
-	
-	
 	<dependencies>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
 	</dependencies>
-	
 	<dependencyManagement>
 		<dependencies>
-			<dependency> 
+			<dependency>
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-classic</artifactId>
 				<version>1.4.9</version>
@@ -97,7 +90,7 @@
 				<artifactId>maven-core</artifactId>
 				<version>3.9.4</version>
 			</dependency>
-			 <dependency>
+			<dependency>
 				<groupId>org.apache.maven.plugin-tools</groupId>
 				<artifactId>maven-plugin-annotations</artifactId>
 				<version>3.7.0</version>
@@ -167,7 +160,6 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -210,11 +202,11 @@
 					<artifactId>maven-javadoc-plugin</artifactId>
 					<version>3.1.1</version>
 				</plugin>
-	            <plugin>
+				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
-	                <artifactId>maven-plugin-plugin</artifactId>
-	                <version>3.9.0</version>
-	            </plugin>
+					<artifactId>maven-plugin-plugin</artifactId>
+					<version>3.9.0</version>
+				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-release-plugin</artifactId>
@@ -261,8 +253,7 @@
 					<artifactId>maven-war-plugin</artifactId>
 					<version>3.4.0</version>
 				</plugin>
-<!--				end apache plugins-->
-				
+				<!--				end apache plugins-->
 				<!-- update https://mvnrepository.com/artifact/org.codehaus.mojo -->
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
@@ -285,7 +276,7 @@
 						<generateBackupPoms>false</generateBackupPoms>
 					</configuration>
 				</plugin>
-<!--				end codehaus plugins-->
+				<!--				end codehaus plugins-->
 			</plugins>
 		</pluginManagement>
 		<plugins>
@@ -318,5 +309,4 @@
 			</extension>
 		</extensions>
 	</build>
-
 </project>
