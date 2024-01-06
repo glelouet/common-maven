@@ -26,12 +26,12 @@ sudo -u maven mkdir -p /home/maven/public_html/snapshot
 sudo chmod -R o+x /home/maven
 ```
 
+
 ### Install and configure Web server
 
 ```
 sudo apt install apache2 -y
 sudo a2enmod userdir
-# actually not used yet
 sudo a2enmod ssl
 sudo service apache2 restart
 ```
@@ -42,7 +42,29 @@ check if you have access to local maven dir:
 curl localhost/~maven/
 ```
 
-should return  a page with the two "release" and "snapshot" folders
+should return a page with the two "release" and "snapshot" folders
+
+
+### Activate https
+
+First create a self-signed certificate in /etc/ssl/
+
+```
+sudo openssl req -x509 -nodes -days 36500 -newkey rsa:2048 -batch -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
+```
+
+Then edit the file `/etc/apache2/sites-enabled/000-default.conf` to make it start with :
+
+```
+<VirtualHost *:443>
+        SSLEngine on
+        SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key    
+        SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt    
+```
+
+and restart apache2 with `sudo service apache2 restart`
+
+The command `curl https://localhost/~maven/ -k` should return a valid page (-k is because the certificate is self signed)
 
 ### Install and configure FTP server
 
