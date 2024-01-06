@@ -65,11 +65,9 @@ you then need to restart the server, and connect to your ftp server using the ft
 
 ### Configuration in your pom
 
-First add your repository to fetch the artifacts. See the project/repositories in that project's pom.
+First add the distributionManagement in the same pom to specify where to deploy from. For an example see that project's pom
 
-Then add the distributionManagement in the same pom to specify where to deploy from. Again, see that project's pom
-
-Finally add in your `~/.m2/settings.xml` the login information. In my case I names my two repositories kimsufi-ftp-release and kimsufi-ftp-snapshot anbd I have password "mypassword"  (change accordingly) . The settings is not ended because you should have other things.
+You need to add in your `~/.m2/settings.xml` the login information. In my case I names my two repositories kimsufi-ftp-release and kimsufi-ftp-snapshot anbd I have password "mypassword"  (change accordingly) . The settings is not ended because you should have other things.
 
 ```
 <settings>
@@ -87,3 +85,4 @@ Finally add in your `~/.m2/settings.xml` the login information. In my case I nam
   </servers>
 ```
 
+Then for a project to use your repo, see the project/repositories in that project's pom.
